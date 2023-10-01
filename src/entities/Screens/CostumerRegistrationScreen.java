@@ -5,8 +5,8 @@ import entities.Costumer;
 import javax.swing.*;
 import java.awt.*;
 
-public class RegistrationScreen extends Screen {
-    public RegistrationScreen() {
+public class CostumerRegistrationScreen extends Screen {
+    public CostumerRegistrationScreen() {
         JTextField name, cep, addressNumber, cpf, password;
         JButton createCostumerBtn;
 
@@ -54,9 +54,9 @@ public class RegistrationScreen extends Screen {
     private void createCostumer (String name, String password, String cep, String number, String cpf) {
         Costumer costumer = new Costumer(name, password, cep, number, cpf);
         costumersList.add(costumer);
-        for (Costumer costumer1 : costumersList) {
-            System.out.println(costumer1);
-        }
+//        for (Costumer costumer1 : costumersList) {
+//            System.out.println(costumer1);
+//        }
     }
 
 }

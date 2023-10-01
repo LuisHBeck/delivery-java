@@ -1,7 +1,10 @@
 package application;
 
+import entities.Screens.CostumerRegistrationScreen;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+//        Screen screen = new Screen();
+        CostumerRegistrationScreen costumerRegistrationScreen = new CostumerRegistrationScreen();
     }
 }
