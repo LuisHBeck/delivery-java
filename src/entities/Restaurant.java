@@ -7,7 +7,7 @@ public class Restaurant extends User{
     protected String cnpj;
     protected List<Sandwich> menu = new ArrayList<>();
 
-    public Restaurant(String name, String password, Integer cep, Integer addressNumber, String cnpj) {
+    public Restaurant(String name, String password, String cep, String addressNumber, String cnpj) {
         super(name, password, cep, addressNumber);
         this.cnpj = cnpj;
     }

@@ -13,8 +13,8 @@ public class TerminalTest {
         Order order1;
         Sandwich sandwich2;
 
-        costumer1=new Costumer("Luís Beck", "test@test", 13275090, 146, "47238341840");
-        restaurant1=new Restaurant("BecksRest", "test@test", 13275049, 27, "16409296000139");
+        costumer1=new Costumer("Luís Beck", "test@test", "13275090", "146", "47238341840");
+        restaurant1=new Restaurant("BecksRest", "test@test", "13275049", "27", "16409296000139");
         users.add(costumer1);
         users.add(restaurant1);
 
