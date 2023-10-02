@@ -10,7 +10,7 @@ public class LoginScreen extends Screen{
     public LoginScreen(Boolean visibility) {
         super(visibility);
         JTextField registrationNumber, password;
-        JButton btnLogin;
+        JButton btnLogin, returnBtn;
 
         // EMAIL TEXT FIELD
         registrationNumber = new JTextField();
@@ -35,6 +35,17 @@ public class LoginScreen extends Screen{
             if (isValid) System.out.println("VALID USER");
             else System.out.println("INVALID USER");
 
+        });
+
+        // RETURN TO INITIAL SCREEN
+        returnBtn = new JButton("<-");
+        returnBtn.setBounds(800, 15, 50, 40);
+        returnBtn.setFont(new Font("Arial", Font.CENTER_BASELINE, 15));
+        returnBtn.setForeground(new Color(10,10,10));
+        returnBtn.setBackground(new Color(139, 248, 151, 255));
+        add(returnBtn);
+        returnBtn.addActionListener(e -> {
+            ScreenManager.goToScreen(this, new InitialScreen(true));
         });
     }
     public boolean isValidUser(String registrationNumber, String password) {

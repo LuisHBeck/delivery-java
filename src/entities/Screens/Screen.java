@@ -9,8 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Screen extends JFrame{
-    public List<Costumer> costumersList = new ArrayList<>();
-    protected List<Restaurant> restaurantsList = new ArrayList<>();
+    protected static List<Costumer> costumersList = new ArrayList<>();
+    protected static List<Restaurant> restaurantsList = new ArrayList<>();
     public Screen(Boolean visibility) {
         JButton close;
 
