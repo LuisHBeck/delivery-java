@@ -42,5 +42,8 @@ public class Restaurant extends User{
         }
     }
 
-
+    @Override
+    public String toString() {
+        return String.format("%s, %s, %s, %s", name, cep, addressNumber, cnpj);
+    }
 }

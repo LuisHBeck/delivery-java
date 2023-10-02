@@ -9,7 +9,7 @@ import java.util.List;
 
 public class Screen extends JFrame{
     public List<Costumer> costumersList = new ArrayList<>();
-    protected List<Restaurant> restaurantsList;
+    protected List<Restaurant> restaurantsList = new ArrayList<>();
     public Screen() {
         setTitle("Beck's Delivery");
         setVisible(true);
