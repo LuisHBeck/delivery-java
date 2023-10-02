@@ -29,5 +29,8 @@ public class TerminalTest {
         order1.addToShoppingCart(sandwich2);
         System.out.println("Your order: ");
         order1.getShoppingCart();
+
+        System.out.printf(String.valueOf(costumer1.getCpf().equals("47238341840")));
+        System.out.println(costumer1.getPassword().equals("test@test"));
     }
 }

@@ -2,7 +2,7 @@ package entities;
 
 public abstract class User {
     protected String name;
-    private String password;
+    protected String password;
     protected String cep;
     protected String addressNumber;
 
@@ -11,5 +11,9 @@ public abstract class User {
         this.password = password;
         this.cep = cep;
         this.addressNumber = addressNumber;
+    }
+
+    public String getPassword() {
+        return password;
     }
 }

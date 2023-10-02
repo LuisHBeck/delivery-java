@@ -7,9 +7,10 @@ import javax.swing.*;
 import java.awt.*;
 
 public class RestaurantRegistrationScreen extends Screen{
-    public RestaurantRegistrationScreen() {
+    public RestaurantRegistrationScreen(Boolean visibility) {
+        super(visibility);
         JTextField name, cep, addressNumber, cnpj, password;
-        JButton createRestaurantBtn;
+        JButton createRestaurantBtn, returnBtn;
 
         // NAME TEXT FIELD
         name = new JTextField();
@@ -49,6 +50,17 @@ public class RestaurantRegistrationScreen extends Screen{
         add(createRestaurantBtn);
         createRestaurantBtn.addActionListener(e -> {
             createRestaurant(name.getText(), password.getText(), cep.getText(), addressNumber.getText(), cnpj.getText());
+        });
+
+        // RETURN TO INITIAL SCREEN
+        returnBtn = new JButton("<-");
+        returnBtn.setBounds(800, 15, 50, 40);
+        returnBtn.setFont(new Font("Arial", Font.CENTER_BASELINE, 15));
+        returnBtn.setForeground(new Color(10,10,10));
+        returnBtn.setBackground(new Color(139, 248, 151, 255));
+        add(returnBtn);
+        returnBtn.addActionListener(e -> {
+            ScreenManager.goToScreen(this, new InitialScreen(true));
         });
     }
 

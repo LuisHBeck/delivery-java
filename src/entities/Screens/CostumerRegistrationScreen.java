@@ -6,9 +6,10 @@ import javax.swing.*;
 import java.awt.*;
 
 public class CostumerRegistrationScreen extends Screen {
-    public CostumerRegistrationScreen() {
+    public CostumerRegistrationScreen(Boolean visibility) {
+        super(visibility);
         JTextField name, cep, addressNumber, cpf, password;
-        JButton createCostumerBtn;
+        JButton createCostumerBtn, returnBtn;
 
         // NAME TEXT FIELD
         name = new JTextField();
@@ -49,14 +50,24 @@ public class CostumerRegistrationScreen extends Screen {
         createCostumerBtn.addActionListener(e -> {
             createCostumer(name.getText(), password.getText(), cep.getText(), addressNumber.getText(), cpf.getText());
         });
+
+        // RETURN TO INITIAL SCREEN
+        returnBtn = new JButton("<-");
+        returnBtn.setBounds(800, 15, 50, 40);
+        returnBtn.setFont(new Font("Arial", Font.CENTER_BASELINE, 15));
+        returnBtn.setForeground(new Color(10,10,10));
+        returnBtn.setBackground(new Color(139, 248, 151, 255));
+        add(returnBtn);
+        returnBtn.addActionListener(e -> {
+            ScreenManager.goToScreen(this, new InitialScreen(true));
+        });
     }
 
     private void createCostumer (String name, String password, String cep, String number, String cpf) {
         Costumer costumer = new Costumer(name, password, cep, number, cpf);
         costumersList.add(costumer);
-//        for (Costumer costumer1 : costumersList) {
-//            System.out.println(costumer1);
-//        }
+        for (Costumer costumer1 : costumersList) {
+            System.out.println(costumer1);
+        }
     }
-
 }
