@@ -2,6 +2,7 @@ package entities.Screens;
 
 import entities.Costumer;
 import entities.Restaurant;
+import entities.User;
 
 import javax.swing.*;
 import java.awt.*;
@@ -48,30 +49,9 @@ public class LoginScreen extends Screen{
             ScreenManager.goToScreen(this, new InitialScreen(true));
         });
     }
-    public boolean isValidUser(String registrationNumber, String password) {
-        for (Costumer costumer : costumersList) {
-            if (costumer.getCpf().equals(registrationNumber)) {
-                System.out.printf("CPF ITS EQUALS");
-                if (costumer.getPassword().equals(password)) {
-                    System.out.printf("PASSWORD ITS EQUALS");
-                    return true;
-                }
-            }
-        }
-        for (Restaurant restaurant : restaurantsList) {
-            if (restaurant.getCnpj().equals(registrationNumber)) {
-                System.out.printf("CPF ITS EQUALS");
-                if (restaurant.getPassword().equals(password)) {
-                    System.out.printf("PASSWORD ITS EQUALS");
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-//    public boolean isValidUser(String cpf, String password) {
+//    public boolean isValidUser(String registrationNumber, String password) {
 //        for (Costumer costumer : costumersList) {
-//            if (costumer.getCpf().equals(cpf)) {
+//            if (costumer.getCpf().equals(registrationNumber)) {
 //                System.out.printf("CPF ITS EQUALS");
 //                if (costumer.getPassword().equals(password)) {
 //                    System.out.printf("PASSWORD ITS EQUALS");
@@ -79,6 +59,34 @@ public class LoginScreen extends Screen{
 //                }
 //            }
 //        }
+//        for (Restaurant restaurant : restaurantsList) {
+//            if (restaurant.getCnpj().equals(registrationNumber)) {
+//                System.out.printf("CPF ITS EQUALS");
+//                if (restaurant.getPassword().equals(password)) {
+//                    System.out.printf("PASSWORD ITS EQUALS");
+//                    return true;
+//                }
+//            }
+//        }
 //        return false;
 //    }
+
+    public boolean isValidUser(String registrationNumber, String password) {
+        boolean validRegistrationNumber = false;
+        for (User user : usersList) {
+            if (user instanceof Costumer) {
+                validRegistrationNumber = ((Costumer) user).getCpf().equals(registrationNumber);
+            } else {
+                validRegistrationNumber = ((Restaurant) user).getCnpj().equals(registrationNumber);
+            }
+            if (validRegistrationNumber) {
+                System.out.printf("CPF ITS EQUALS");
+                if (user.getPassword().equals(password)) {
+                    System.out.printf("PASSWORD ITS EQUALS");
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

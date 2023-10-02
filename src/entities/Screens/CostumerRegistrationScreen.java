@@ -65,9 +65,9 @@ public class CostumerRegistrationScreen extends Screen {
 
     private void createCostumer (String name, String password, String cep, String number, String cpf) {
         Costumer costumer = new Costumer(name, password, cep, number, cpf);
-        costumersList.add(costumer);
-        for (Costumer costumer1 : costumersList) {
-            System.out.println(costumer1);
-        }
+        usersList.add(costumer);
+//        for (Costumer costumer1 : costumersList) {
+//            System.out.println(costumer1);
+//        }
     }
 }

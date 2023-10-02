@@ -27,7 +27,7 @@ public class InitialScreen extends Screen{
         btnToRestaurantRegistration.setBackground(new Color(139, 248, 151, 255));
         add(btnToRestaurantRegistration);
         btnToRestaurantRegistration.addActionListener(e -> {
-            ScreenManager.goToScreen(this, new CostumerRegistrationScreen(true));
+            ScreenManager.goToScreen(this, new RestaurantRegistrationScreen(true));
         });
 
         // BUTTON TO LOGIN

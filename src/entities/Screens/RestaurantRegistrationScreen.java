@@ -42,7 +42,7 @@ public class RestaurantRegistrationScreen extends Screen{
         add(password);
 
         // BUTTON CREATE COSTUMER
-        createRestaurantBtn = new JButton("Create Costumer");
+        createRestaurantBtn = new JButton("Create Restaurant");
         createRestaurantBtn.setBounds(320, 475, 200, 50);
         createRestaurantBtn.setFont(new Font("Arial", Font.CENTER_BASELINE, 15));
         createRestaurantBtn.setForeground(new Color(10,10,10));
@@ -66,9 +66,9 @@ public class RestaurantRegistrationScreen extends Screen{
 
     private void createRestaurant (String name, String password, String cep, String number, String cpf) {
         Restaurant restaurant = new Restaurant(name, password, cep, number, cpf);
-        restaurantsList.add(restaurant);
-        for (Restaurant restaurant1 : restaurantsList) {
-            System.out.println(restaurant1);
-        }
+        usersList.add(restaurant);
+//        for (Restaurant restaurant1 : restaurantsList) {
+//            System.out.println(restaurant1);
+//        }
     }
 }
