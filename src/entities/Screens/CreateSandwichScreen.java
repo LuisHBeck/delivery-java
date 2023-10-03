@@ -11,7 +11,7 @@ public class CreateSandwichScreen extends Screen{
         super(visibility);
         JTextField id, name, price;
         JLabel toId, toName, toPrice;
-        JButton btnCreateSandwich;
+        JButton btnCreateSandwich, returnBtn;
         Color black = new Color(10,10,10);
         Color green = new Color(139,248,151,255);
         Font font = new Font("Arial", Font.CENTER_BASELINE, 15);
@@ -52,6 +52,17 @@ public class CreateSandwichScreen extends Screen{
             } catch (Exception exception) {
                 message("Creation failure");
             }
+        });
+
+        // RETURN TO INITIAL SCREEN
+        returnBtn = new JButton("<-");
+        returnBtn.setBounds(800, 15, 50, 40);
+        returnBtn.setFont(font);
+        returnBtn.setForeground(black);
+        returnBtn.setBackground(green);
+        add(returnBtn);
+        returnBtn.addActionListener(e -> {
+            ScreenManager.goToScreen(this, new InitialScreen(true));
         });
     }
 

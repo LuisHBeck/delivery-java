@@ -37,5 +37,8 @@ public class RestaurantMenuScreen extends Screen{
         btnRemoveSandwich.setForeground(black);
         btnRemoveSandwich.setBackground(green);
         add(btnRemoveSandwich);
+        btnRemoveSandwich.addActionListener(e -> {
+            ScreenManager.goToScreen(this, new RemoveSandwichScreen(true));
+        });
     }
 }
