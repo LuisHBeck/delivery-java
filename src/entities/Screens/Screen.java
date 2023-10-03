@@ -10,9 +10,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Screen extends JFrame{
-//    protected static List<Costumer> costumersList = new ArrayList<>();
-//    protected static List<Restaurant> restaurantsList = new ArrayList<>();
     protected static List<User> usersList = new ArrayList<>();
+    private static Restaurant currentRestaurant;
     public Screen(Boolean visibility) {
         JButton close;
 
@@ -23,5 +22,13 @@ public class Screen extends JFrame{
         setResizable(false);
         setLocationRelativeTo(null);
         setLayout(null);
+    }
+
+    public static Restaurant getCurrentRestaurant() {
+        return currentRestaurant;
+    }
+
+    public static void setCurrentRestaurant(Restaurant currentRestaurant) {
+        Screen.currentRestaurant = currentRestaurant;
     }
 }

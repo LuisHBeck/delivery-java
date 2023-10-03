@@ -91,8 +91,5 @@ public class RestaurantRegistrationScreen extends Screen{
         usersList.add(restaurant);
         JOptionPane.showMessageDialog(null,"Successfully created!","Restaurant Create",JOptionPane.INFORMATION_MESSAGE);
         ScreenManager.goToScreen(this, new InitialScreen(true));
-//        for (Restaurant restaurant1 : restaurantsList) {
-//            System.out.println(restaurant1);
-//        }
     }
 }

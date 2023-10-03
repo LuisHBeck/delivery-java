@@ -12,6 +12,8 @@ public class CostumerRegistrationScreen extends Screen {
         JLabel toName, toCep, toAddressNumber, toCpf, toPassword;
         JButton createCostumerBtn, returnBtn;
         Font font = new Font("Arial", Font.CENTER_BASELINE, 15);
+        Color black = new Color(10,10,10);
+        Color green = new Color(139,248,151,255);
 
         // NAME TEXT FIELD
         toName = new JLabel("Name: ");
@@ -30,7 +32,7 @@ public class CostumerRegistrationScreen extends Screen {
         add(toCep);
         cep = new JTextField();
         cep.setBounds(320, 135, 200, 50);
-        cep.setFont(new Font("Arial", Font.CENTER_BASELINE, 15));
+        cep.setFont(font);
         add(cep);
 
         // ADDRESS NUMBER TEXT FIELD
@@ -66,8 +68,8 @@ public class CostumerRegistrationScreen extends Screen {
         createCostumerBtn = new JButton("Create Costumer");
         createCostumerBtn.setBounds(320, 475, 200, 50);
         createCostumerBtn.setFont(font);
-        createCostumerBtn.setForeground(new Color(10,10,10));
-        createCostumerBtn.setBackground(new Color(139, 248, 151, 255));
+        createCostumerBtn.setForeground(black);
+        createCostumerBtn.setBackground(green);
         add(createCostumerBtn);
         createCostumerBtn.addActionListener(e -> {
             createCostumer(name.getText(), password.getText(), cep.getText(), addressNumber.getText(), cpf.getText());
@@ -76,9 +78,9 @@ public class CostumerRegistrationScreen extends Screen {
         // RETURN TO INITIAL SCREEN
         returnBtn = new JButton("<-");
         returnBtn.setBounds(800, 15, 50, 40);
-        returnBtn.setFont(new Font("Arial", Font.CENTER_BASELINE, 15));
-        returnBtn.setForeground(new Color(10,10,10));
-        returnBtn.setBackground(new Color(139, 248, 151, 255));
+        returnBtn.setFont(font);
+        returnBtn.setForeground(black);
+        returnBtn.setBackground(green);
         add(returnBtn);
         returnBtn.addActionListener(e -> {
             ScreenManager.goToScreen(this, new InitialScreen(true));
@@ -90,8 +92,5 @@ public class CostumerRegistrationScreen extends Screen {
         usersList.add(costumer);
         JOptionPane.showMessageDialog(null,"Successfully created!","User Create",JOptionPane.INFORMATION_MESSAGE);
         ScreenManager.goToScreen(this, new InitialScreen(true));
-//        for (Costumer costumer1 : costumersList) {
-//            System.out.println(costumer1);
-//        }
     }
 }
