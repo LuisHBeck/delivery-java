@@ -35,12 +35,7 @@ public class SandwichListScreen extends Screen{
         setVisible(true);
 
         // RETURN TO INITIAL SCREEN
-        returnBtn = new JButton("<-");
-        returnBtn.setBounds(800, 15, 50, 40);
-        returnBtn.setFont(font);
-        returnBtn.setForeground(black);
-        returnBtn.setBackground(green);
-        add(returnBtn);
+        returnBtn = ScreenManager.buttonGenerator(this, "<-", 800,15,50,40);
         returnBtn.addActionListener(e -> {
             ScreenManager.goToScreen(this, new RestaurantMenuScreen(true));
         });

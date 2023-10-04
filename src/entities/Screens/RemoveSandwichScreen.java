@@ -24,12 +24,7 @@ public class RemoveSandwichScreen extends Screen{
         add(id);
 
         // BUTTON REMOVE SANDWICH
-        btnRemoveSandwich = new JButton("Remove");
-        btnRemoveSandwich.setBounds(320,135,200,50);
-        btnRemoveSandwich.setFont(font);
-        btnRemoveSandwich.setForeground(black);
-        btnRemoveSandwich.setBackground(green);
-        add(btnRemoveSandwich);
+        btnRemoveSandwich = ScreenManager.buttonGenerator(this, "Remove", 320,135,200,50);
         btnRemoveSandwich.addActionListener(e -> {
             try {
                 int iId = Integer.parseInt(id.getText());
@@ -42,12 +37,7 @@ public class RemoveSandwichScreen extends Screen{
         });
 
         // RETURN TO INITIAL SCREEN
-        returnBtn = new JButton("<-");
-        returnBtn.setBounds(800, 15, 50, 40);
-        returnBtn.setFont(font);
-        returnBtn.setForeground(black);
-        returnBtn.setBackground(green);
-        add(returnBtn);
+        returnBtn = ScreenManager.buttonGenerator(this, "<-", 800,15,50,40);
         returnBtn.addActionListener(e -> {
             ScreenManager.goToScreen(this, new RestaurantMenuScreen(true));
         });

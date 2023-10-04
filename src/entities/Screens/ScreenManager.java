@@ -30,6 +30,21 @@ public class ScreenManager {
         return field;
     }
 
+    public static JPasswordField passwordFieldGenerator(JFrame jFrame, String labelText, int yPosition) {
+        JLabel toLabel;
+        JPasswordField field;
+        toLabel = new JLabel(labelText);
+        toLabel.setBounds(320, (yPosition-25), 200,15);
+        toLabel.setFont(Screen.font);
+        jFrame.add(toLabel);
+        field = new JPasswordField();
+        field.setBounds(320, yPosition, 200,50);
+        field.setFont(Screen.font);
+        jFrame.add(field);
+
+        return field;
+    }
+
     public static JButton buttonGenerator(JFrame jFrame, String btnText, int x, int y, int w, int h) {
         JButton btn;
         btn = new JButton(btnText);

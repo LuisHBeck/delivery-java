@@ -24,7 +24,7 @@ public class CostumerRegistrationScreen extends Screen {
         cpf = ScreenManager.inputFieldGenerator(this, "CPF", 305);
 
         // PASSWORD TEXT FIELD
-        password = ScreenManager.inputFieldGenerator(this, "Password", 390);
+        password = ScreenManager.passwordFieldGenerator(this, "Password", 390);
 
 
         // BUTTON CREATE COSTUMER
