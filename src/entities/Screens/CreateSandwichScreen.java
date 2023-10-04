@@ -62,7 +62,7 @@ public class CreateSandwichScreen extends Screen{
         returnBtn.setBackground(green);
         add(returnBtn);
         returnBtn.addActionListener(e -> {
-            ScreenManager.goToScreen(this, new InitialScreen(true));
+            ScreenManager.goToScreen(this, new RestaurantMenuScreen(true));
         });
     }
 
@@ -72,6 +72,7 @@ public class CreateSandwichScreen extends Screen{
 
         Sandwich sandwich = new Sandwich(id, name, price);
         restaurant.addToMenu(sandwich);
+        System.out.println(restaurant.getMenu().toString());
     }
 
     public void message(String result) {

@@ -52,7 +52,7 @@ public class RemoveSandwichScreen extends Screen{
         returnBtn.setBackground(green);
         add(returnBtn);
         returnBtn.addActionListener(e -> {
-            ScreenManager.goToScreen(this, new InitialScreen(true));
+            ScreenManager.goToScreen(this, new RestaurantMenuScreen(true));
         });
     }
 

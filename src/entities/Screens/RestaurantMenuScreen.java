@@ -29,6 +29,9 @@ public class RestaurantMenuScreen extends Screen{
         btnShowMenu.setForeground(black);
         btnShowMenu.setBackground(green);
         add(btnShowMenu);
+        btnShowMenu.addActionListener(e -> {
+            ScreenManager.goToScreen(this, new SandwichListScreen(true));
+        });
 
         // BUTTON REMOVE SANDWICH
         btnRemoveSandwich = new JButton("Remove Sandwich");
