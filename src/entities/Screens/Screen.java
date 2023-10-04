@@ -12,6 +12,7 @@ import java.util.List;
 public class Screen extends JFrame{
     protected static List<User> usersList = new ArrayList<>();
     private static Restaurant currentRestaurant;
+    private static Costumer currentCostumer;
     public Screen(Boolean visibility) {
         JButton close;
 
@@ -30,5 +31,13 @@ public class Screen extends JFrame{
 
     public static void setCurrentRestaurant(Restaurant currentRestaurant) {
         Screen.currentRestaurant = currentRestaurant;
+    }
+
+    public static Costumer getCurrentCostumer() {
+        return currentCostumer;
+    }
+
+    public static void setCurrentCostumer(Costumer currentCostumer) {
+        Screen.currentCostumer = currentCostumer;
     }
 }

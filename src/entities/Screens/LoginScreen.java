@@ -44,10 +44,16 @@ public class LoginScreen extends Screen{
         btnLogin.setBackground(green);
         add(btnLogin);
         btnLogin.addActionListener(e -> {
-            boolean isValid = isValidUser(registrationNumber.getText(), password.getText());
+            Result result = isValidUser(registrationNumber.getText(), password.getText());
+            boolean isValid = result.isValidUser();
+            boolean isCostumer = result.isCostumer();
             if (isValid) {
                 message("Successfully Authenticated");
-                ScreenManager.goToScreen(this, new RestaurantMenuScreen(true));
+                if (isCostumer) {
+                    ScreenManager.goToScreen(this, new CostumerMenuScreen(true));
+                } else {
+                    ScreenManager.goToScreen(this, new RestaurantMenuScreen(true));
+                }
             }
             else {
                 message("Authentication failure");
@@ -67,7 +73,11 @@ public class LoginScreen extends Screen{
         });
     }
 
-    public boolean isValidUser(String registrationNumber, String password) {
+    public record Result(boolean isValidUser, boolean isCostumer) {}
+
+    public Result isValidUser(String registrationNumber, String password) {
+        record Result(boolean isValidUser, boolean isCostumer) {}
+
         boolean validRegistrationNumber = false;
         for (User user : usersList) {
             if (user instanceof Costumer) {
@@ -79,12 +89,15 @@ public class LoginScreen extends Screen{
                 if (user.getPassword().equals(password)) {
                     if (user instanceof Restaurant) {
                         setCurrentRestaurant((Restaurant) user);
+                        return new LoginScreen.Result(true, false);
+                    } else {
+                        setCurrentCostumer((Costumer) user);
+                        return new LoginScreen.Result(true, true);
                     }
-                    return true;
                 }
             }
         }
-        return false;
+        return new LoginScreen.Result(false, false);
     }
 
     public void message(String result) {
