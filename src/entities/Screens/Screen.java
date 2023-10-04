@@ -6,6 +6,7 @@ import entities.User;
 
 import javax.swing.*;
 import java.awt.*;
+import java.security.PublicKey;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,6 +14,9 @@ public class Screen extends JFrame{
     protected static List<User> usersList = new ArrayList<>();
     private static Restaurant currentRestaurant;
     private static Costumer currentCostumer;
+    public static Color black = new Color(10,10,10);
+    public static Color green = new Color(139,248,151,255);
+    public static Font font = new Font("Arial", Font.CENTER_BASELINE, 15);
     public Screen(Boolean visibility) {
         JButton close;
 

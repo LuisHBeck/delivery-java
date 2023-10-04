@@ -11,13 +11,9 @@ public class SandwichListScreen extends Screen{
     public SandwichListScreen(Boolean visibility) {
         super(visibility);
         JButton returnBtn;
-        Color black = new Color(10,10,10);
-        Color green = new Color(139,248,151,255);
-        Font font = new Font("Arial", Font.CENTER_BASELINE, 15);
 
         DefaultTableModel model = new DefaultTableModel(new Object[]{"Id", "Name", "Price"},0);
-
-
+        
         for (Sandwich sandwich : getCurrentRestaurant().getMenu()) {
             System.out.println(sandwich);
             Object[] row = {sandwich.getId(), sandwich.getName(), sandwich.getPrice()};

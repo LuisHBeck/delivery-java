@@ -12,7 +12,6 @@ public class RestaurantRegistrationScreen extends Screen{
         JTextField name, cep, addressNumber, cnpj, password;
         JLabel toName, toCep, toAddressNumber, toCnpj, toPassword;
         JButton createRestaurantBtn, returnBtn;
-        Font font = new Font("Arial", Font.CENTER_BASELINE, 15);
 
         // NAME TEXT FIELD
         toName = new JLabel("Name: ");

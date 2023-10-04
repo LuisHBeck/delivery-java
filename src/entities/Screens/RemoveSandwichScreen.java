@@ -12,9 +12,6 @@ public class RemoveSandwichScreen extends Screen{
         JTextField id;
         JLabel toId;
         JButton btnRemoveSandwich, returnBtn;
-        Color black = new Color(10,10,10);
-        Color green = new Color(139,248,151,255);
-        Font font = new Font("Arial", Font.CENTER_BASELINE, 15);
 
         // ID TEXT FIELD
         toId = new JLabel("Id: ");

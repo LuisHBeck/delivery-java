@@ -13,9 +13,6 @@ public class LoginScreen extends Screen{
         JTextField registrationNumber, password;
         JButton btnLogin, returnBtn;
         JLabel toRegistrationNumber, toPassword;
-        Color black = new Color(10,10,10);
-        Color green = new Color(139,248,151,255);
-        Font font = new Font("Arial", Font.CENTER_BASELINE, 15);
 
         // EMAIL TEXT FIELD
         toRegistrationNumber = new JLabel("Registration Number: ");

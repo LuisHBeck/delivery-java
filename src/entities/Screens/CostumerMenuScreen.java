@@ -7,9 +7,6 @@ public class CostumerMenuScreen extends Screen{
     public CostumerMenuScreen(Boolean visibility) {
         super(visibility);
         JButton btnShowMenu, btnAddToShoppingCart, btnFinishOrder, returnBtn;
-        Color black = new Color(10,10,10);
-        Color green = new Color(139,248,151,255);
-        Font font = new Font("Arial", Font.CENTER_BASELINE, 15);
 
         // BUTTON SHOW MENU
         btnShowMenu = new JButton("Show menu");

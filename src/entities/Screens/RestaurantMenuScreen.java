@@ -7,9 +7,6 @@ public class RestaurantMenuScreen extends Screen{
     public RestaurantMenuScreen(Boolean visibility) {
         super(visibility);
         JButton btnCreateSandwich, btnRemoveSandwich, btnShowMenu;
-        Color black = new Color(10,10,10);
-        Color green = new Color(139,248,151,255);
-        Font font = new Font("Arial", Font.CENTER_BASELINE, 15);
 
         // BUTTON CREATE SANDWICH
         btnCreateSandwich = new JButton("Add new Sandwich");

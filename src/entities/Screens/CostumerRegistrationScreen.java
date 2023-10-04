@@ -11,9 +11,6 @@ public class CostumerRegistrationScreen extends Screen {
         JTextField name, cep, addressNumber, cpf, password;
         JLabel toName, toCep, toAddressNumber, toCpf, toPassword;
         JButton createCostumerBtn, returnBtn;
-        Font font = new Font("Arial", Font.CENTER_BASELINE, 15);
-        Color black = new Color(10,10,10);
-        Color green = new Color(139,248,151,255);
 
         // NAME TEXT FIELD
         toName = new JLabel("Name: ");
