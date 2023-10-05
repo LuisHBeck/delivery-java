@@ -3,14 +3,22 @@ package entities;
 public abstract class User {
     protected String name;
     protected String password;
-    protected String cep;
-    protected String addressNumber;
+    protected String x;
+    protected String y;
 
-    public User(String name, String password, String cep, String addressNumber) {
+    public User(String name, String password, String x, String y) {
         this.name = name;
         this.password = password;
-        this.cep = cep;
-        this.addressNumber = addressNumber;
+        this.x = x;
+        this.y = y;
+    }
+
+    public String getX() {
+        return x;
+    }
+
+    public String getY() {
+        return y;
     }
 
     public String getPassword() {

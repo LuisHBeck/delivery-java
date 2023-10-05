@@ -7,8 +7,8 @@ public class Restaurant extends User{
     protected String cnpj;
     protected static List<Sandwich> menu = new ArrayList<>();
 
-    public Restaurant(String name, String password, String cep, String addressNumber, String cnpj) {
-        super(name, password, cep, addressNumber);
+    public Restaurant(String name, String password, String x, String y, String cnpj) {
+        super(name, password, x, y);
         this.cnpj = cnpj;
     }
 
@@ -44,6 +44,6 @@ public class Restaurant extends User{
 
     @Override
     public String toString() {
-        return String.format("%s, %s, %s, %s", name, cep, addressNumber, cnpj);
+        return String.format("%s, %s, %s, %s", name, x, y, cnpj);
     }
 }

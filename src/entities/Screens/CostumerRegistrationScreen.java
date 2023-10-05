@@ -8,17 +8,17 @@ import java.awt.*;
 public class CostumerRegistrationScreen extends Screen {
     public CostumerRegistrationScreen(Boolean visibility) {
         super(visibility);
-        JTextField name, cep, addressNumber, cpf, password;
+        JTextField name, x, y, cpf, password;
         JButton createCostumerBtn, returnBtn;
 
         // NAME TEXT FIELD
         name = ScreenManager.inputFieldGenerator(this, "Name", 50);
 
         // CEP TEXT FIELD
-        cep = ScreenManager.inputFieldGenerator(this, "CEP", 135);
+        x = ScreenManager.inputFieldGenerator(this, "x", 135);
 
         // ADDRESS NUMBER TEXT FIELD
-        addressNumber = ScreenManager.inputFieldGenerator(this, "Address number", 220);
+        y = ScreenManager.inputFieldGenerator(this, "y", 220);
 
         // CPF TEXT FIELD
         cpf = ScreenManager.inputFieldGenerator(this, "CPF", 305);
@@ -30,7 +30,7 @@ public class CostumerRegistrationScreen extends Screen {
         // BUTTON CREATE COSTUMER
         createCostumerBtn = ScreenManager.buttonGenerator(this, "Create Costumer", 320,472,200,50);
         createCostumerBtn.addActionListener(e -> {
-            createCostumer(name.getText(), password.getText(), cep.getText(), addressNumber.getText(), cpf.getText());
+            createCostumer(name.getText(), password.getText(), x.getText(), y.getText(), cpf.getText());
         });
 
         // RETURN TO INITIAL SCREEN
@@ -40,8 +40,8 @@ public class CostumerRegistrationScreen extends Screen {
         });
     }
 
-    private void createCostumer (String name, String password, String cep, String number, String cpf) {
-        Costumer costumer = new Costumer(name, password, cep, number, cpf);
+    private void createCostumer (String name, String password, String x, String y, String cpf) {
+        Costumer costumer = new Costumer(name, password, x, y, cpf);
         usersList.add(costumer);
         JOptionPane.showMessageDialog(null,"Successfully created!","User Create",JOptionPane.INFORMATION_MESSAGE);
         ScreenManager.goToScreen(this, new InitialScreen(true));

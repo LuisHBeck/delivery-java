@@ -55,4 +55,11 @@ public class ScreenManager {
         jFrame.add(btn);
         return btn;
     }
+
+    public static double freight(int xA, int xB, int yA, int yB) {
+        double distance, distanceAB;
+        distance = (Math.pow((xB- xA),2)) + (Math.pow((yB-yA),2));
+        distanceAB = Math.sqrt(distance);
+        return distanceAB;
+    }
 }

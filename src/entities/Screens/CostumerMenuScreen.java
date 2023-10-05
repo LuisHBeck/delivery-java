@@ -1,5 +1,7 @@
 package entities.Screens;
 
+import entities.Costumer;
+import entities.Restaurant;
 import entities.Sandwich;
 
 import javax.swing.*;
@@ -28,12 +30,19 @@ public class CostumerMenuScreen extends Screen{
         // BUTTON FINISH ORDER
         btnFinishOrder = ScreenManager.buttonGenerator(this, "Finish Order", 320,220,200,50);
         btnFinishOrder.addActionListener(e -> {
-            double totalAmount=0.0;
+            double totalAmount, freight;
+            double shopping=0.0;
+            Costumer costumer = getCurrentCostumer();
+            Restaurant restaurant = getCurrentRestaurant();
+
+            freight = ScreenManager.freight(Integer.parseInt(restaurant.getX()), Integer.parseInt(costumer.getX()), Integer.parseInt(restaurant.getY()),Integer.parseInt(costumer.getY()));
+
             List<Sandwich> shoppingCart = getCurrentCostumer().getShoppingCart();
             for (Sandwich sandwich : shoppingCart) {
-                totalAmount += sandwich.getPrice();
+                shopping += sandwich.getPrice();
             }
-            message("Total", totalAmount);
+            totalAmount = shopping + freight;
+            message(shopping, freight, totalAmount);
         });
 
         // RETURN TO INITIAL SCREEN
@@ -43,7 +52,7 @@ public class CostumerMenuScreen extends Screen{
         });
     }
 
-    public void message(String result, double value) {
-        JOptionPane.showMessageDialog(null,String.format("%s: R$%.2f",result, value),"Authentication",JOptionPane.INFORMATION_MESSAGE);
+    public void message(double value, double freight, double finalValue) {
+        JOptionPane.showMessageDialog(null,String.format("Shopping: R$%.2f Freight: R$%.2f Total: R$%.2f", value,freight,finalValue,"Authentication",JOptionPane.INFORMATION_MESSAGE));
     }
 }

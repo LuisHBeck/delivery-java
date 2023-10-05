@@ -8,8 +8,8 @@ public class Costumer extends User{
 
     protected static List<Sandwich> shoppingCart = new ArrayList<>();
 
-    public Costumer(String name, String password, String cep, String addressNumber, String cpf) {
-        super(name, password, cep, addressNumber);
+    public Costumer(String name, String password, String x, String y, String cpf) {
+        super(name, password, x, y);
         this.cpf = cpf;
     }
 
@@ -31,6 +31,6 @@ public class Costumer extends User{
 
     @Override
     public String toString() {
-        return String.format("%s, %s, %s, %s", this.name, this.cep, this.addressNumber, this.cpf);
+        return String.format("%s, %s, %s, %s", this.name, this.x, this.y, this.cpf);
     }
 }
