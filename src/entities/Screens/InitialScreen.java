@@ -1,5 +1,9 @@
 package entities.Screens;
 
+import entities.Costumer;
+import entities.Restaurant;
+import entities.Sandwich;
+
 import javax.swing.*;
 import java.awt.*;
 

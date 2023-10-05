@@ -44,4 +44,7 @@ public class Screen extends JFrame{
     public static void setCurrentCostumer(Costumer currentCostumer) {
         Screen.currentCostumer = currentCostumer;
     }
+
+
+
 }

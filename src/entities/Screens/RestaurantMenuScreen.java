@@ -17,7 +17,8 @@ public class RestaurantMenuScreen extends Screen{
         // BUTTON SHOW MENU
         btnShowMenu = ScreenManager.buttonGenerator(this, "Show menu", 320,135,200,50);
         btnShowMenu.addActionListener(e -> {
-            ScreenManager.goToScreen(this, new SandwichListScreen(true));
+//            ScreenManager.goToScreen(this, new SandwichListScreen(true));
+            SandwichListScreen screen = new SandwichListScreen(true);
         });
 
         // BUTTON REMOVE SANDWICH
